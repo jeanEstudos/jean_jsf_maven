@@ -1,10 +1,10 @@
-
 package br.com.jsf1.model.entities;
 
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -12,24 +12,19 @@ import javax.persistence.Table;
 import org.hibernate.annotations.ForeignKey;
 
 @Entity
-@Table(name="cidade")
+@Table(name = "cidade")
+public class Cidade implements Serializable {
 
-public class Cidade implements Serializable{
-    
     private static final long serialVersionUID = 1L;
-    
     @Id
     @GeneratedValue
     @Column(name = "idCidade", nullable = false)
     private long id;
-    @Column(name="nomeCidade", length=30)
+    @Column(name = "nomeCidade", length = 30)
     private String nome;
-    
-    @OneToMany
-    @ForeignKey(name="enderecoCidade")
+    @OneToMany(mappedBy = "cidade", fetch = FetchType.LAZY)
+    @ForeignKey(name = "enderecoCidade")
     private List<Endereco> enderecos;
-    
-    
 
     public List<Endereco> getEnderecos() {
         return enderecos;
@@ -38,8 +33,6 @@ public class Cidade implements Serializable{
     public void setEnderecos(List<Endereco> enderecos) {
         this.enderecos = enderecos;
     }
-    
-    
 
     @Override
     public int hashCode() {
@@ -62,13 +55,10 @@ public class Cidade implements Serializable{
         }
         return true;
     }
-    
-    
 
     public Cidade() {
     }
 
-    
     public long getId() {
         return id;
     }
@@ -84,7 +74,4 @@ public class Cidade implements Serializable{
     public void setNome(String nome) {
         this.nome = nome;
     }
-    
-    
-    
 }

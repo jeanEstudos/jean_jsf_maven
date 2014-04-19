@@ -7,7 +7,6 @@ public class FacesContextUtil {
 
     private static final String HIBERNATE_SESSION = "hibernate_session";
 
-    
     //setar na requisição a sessao do hibernate
     public static void setRequestSession(Session session) {
         FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put(HIBERNATE_SESSION, session);

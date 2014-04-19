@@ -26,14 +26,13 @@ public class PhaseListenerJsf1 implements PhaseListener {
 
     }
     //depois da fase
-    
-    // comitar transação, caso erro rollback e fechar sessão;
 
+    // comitar transação, caso erro rollback e fechar sessão;
     @Override
     public void beforePhase(PhaseEvent fase) {
-        
+
         System.out.println("Depois da fase: " + getPhaseId());
-        
+
         if (fase.getPhaseId().equals(PhaseId.RENDER_RESPONSE)) {
             Session sessao = FacesContextUtil.getRequestSession();
             try {

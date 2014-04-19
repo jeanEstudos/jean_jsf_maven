@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -20,7 +21,7 @@ public class TipoLogradouro implements Serializable {
     private long id;
     @Column(name = "descricaoTipoLogradouro", length = 60)
     private String descricao;
-    @OneToMany
+    @OneToMany(mappedBy = "tipoLogradouro", fetch = FetchType.LAZY)
     @ForeignKey(name = "enderecoTipoLogradouro")
     private List<Endereco> enderecos;
 

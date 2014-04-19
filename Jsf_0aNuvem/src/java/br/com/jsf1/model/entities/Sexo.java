@@ -21,13 +21,10 @@ public class Sexo implements Serializable {
     private Long idSexo;
     @Column(name = "descricaoSexo", unique = true, length = 9)
     private String descricao;
-    
     @OneToMany(mappedBy = "sexo", fetch = FetchType.LAZY)
     @ForeignKey(name = "pessoaSexo")
     private List<Pessoa> pessoas;
 
-    
-    
     public List<Pessoa> getPessoas() {
         return pessoas;
     }
