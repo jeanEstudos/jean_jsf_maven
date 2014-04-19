@@ -22,7 +22,7 @@ public class TipoEndereco implements Serializable {
      @Column(name = "descTipoEndereco", length = 60)
     private String descricao;
     @OneToMany
-    @ForeignKey(name = "tipoEnderecoEndereco")
+    @ForeignKey(name = "enderecoTipoEndereco")
     private List<Endereco> enderecos;
 
     public TipoEndereco() {

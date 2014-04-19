@@ -4,9 +4,12 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import org.hibernate.annotations.ForeignKey;
@@ -37,7 +40,31 @@ public class Pessoa implements Serializable {
     
     @ManyToOne(optional=false)
     @ForeignKey(name="pessoaSexo")
-    private Pessoa pessoa;
+    @JoinColumn(name="idSexo", referencedColumnName = "idSexo")// o join
+    private Sexo sexo;
+    
+    @OneToOne(mappedBy="pessoa", fetch = FetchType.LAZY)
+    @ForeignKey(name = "pessoaEndereco")//tem que ficar igual
+    private Endereco endereco;
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+    
+    
+
+    public Sexo getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(Sexo sexo) {
+        this.sexo = sexo;
+    }
+    
     
 
     public Pessoa() {

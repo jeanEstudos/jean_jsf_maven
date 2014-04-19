@@ -26,6 +26,8 @@ public class Sexo implements Serializable {
     @ForeignKey(name = "pessoaSexo")
     private List<Pessoa> pessoas;
 
+    
+    
     public List<Pessoa> getPessoas() {
         return pessoas;
     }

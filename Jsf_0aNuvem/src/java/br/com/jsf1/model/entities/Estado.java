@@ -21,7 +21,7 @@ public class Estado implements Serializable {
     @Column(name = "nomeEstado", length = 30)
     private String nome;
     @OneToMany
-    @ForeignKey(name = "estadoEndereco")
+    @ForeignKey(name = "enderecoEstado")
     private List<Endereco> enderecos;
 
     public Estado() {

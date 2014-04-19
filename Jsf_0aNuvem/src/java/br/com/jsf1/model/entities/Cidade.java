@@ -26,7 +26,7 @@ public class Cidade implements Serializable{
     private String nome;
     
     @OneToMany
-    @ForeignKey(name="cidadeEndereco")
+    @ForeignKey(name="enderecoCidade")
     private List<Endereco> enderecos;
     
     
