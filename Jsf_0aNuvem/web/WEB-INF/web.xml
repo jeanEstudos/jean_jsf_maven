@@ -22,7 +22,7 @@
         <url-pattern>/faces/*</url-pattern>
     </servlet-mapping>
     
-    
+<!--    
     <security-constraint>
         <display-name>Bloqueia o browser de acessar arquivos xhtml</display-name>
         <web-resource-collection>
@@ -31,11 +31,11 @@
         </web-resource-collection>
         <auth-constraint/>
     </security-constraint>
-    
+    -->
     
     <!--    Filtros   -->
     
-    <filter>
+<!--    <filter>
         <filter-name>PrimeFaces FileUpload Filter</filter-name>
         <filter-class>org.primefaces.webapp.filter.FileUploadFilter</filter-class>
     </filter>
@@ -43,7 +43,7 @@
     <filter-mapping>
         <filter-name>PrimeFaces FileUpload Filter</filter-name>
         <servlet-name>Faces Servlet</servlet-name>
-    </filter-mapping>
+    </filter-mapping>-->
           
     
     <!--      Configuração do PrimeFaces   -->
