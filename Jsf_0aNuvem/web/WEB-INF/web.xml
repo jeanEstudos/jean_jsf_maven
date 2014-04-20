@@ -10,7 +10,7 @@
     <display-name>App de Modelo JSF</display-name>
        
        <welcome-file-list>
-        <welcome-file>index.xhtml</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
    
 <!--   Duraçao da sessão  -->
@@ -73,9 +73,7 @@
     </filter-mapping>-->
           
     
-    
-    
-    
+        
     <!--      Configuração do PrimeFaces   -->
           
     <servlet>
@@ -91,7 +89,6 @@
         <param-name>primefaces.THEME</param-name>
         <param-value>pepper-grinder</param-value>
     </context-param>
-        
-   
+    
  
 </web-app>

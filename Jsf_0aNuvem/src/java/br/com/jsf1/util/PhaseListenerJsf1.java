@@ -12,7 +12,7 @@ public class PhaseListenerJsf1 implements PhaseListener {
     // iniciar trasação e colocar no mapa da requisição a sessao do hibernate
     @Override
     public void afterPhase(PhaseEvent fase) {
-        System.out.println("Antes da fase: " + getPhaseId());
+        System.out.println("Antes da fase: " + fase.getPhaseId());
         //Se tiver tentando restaurar a visão, vai abrir uma sessão do hibernate
         //   iniciar uma transação e vai setar na request uma sessão do hibernate
         if (fase.getPhaseId().equals(PhaseId.RESTORE_VIEW)) {
@@ -31,7 +31,7 @@ public class PhaseListenerJsf1 implements PhaseListener {
     @Override
     public void beforePhase(PhaseEvent fase) {
 
-        System.out.println("Depois da fase: " + getPhaseId());
+        System.out.println("Depois da fase: " + fase.getPhaseId());
 
         if (fase.getPhaseId().equals(PhaseId.RENDER_RESPONSE)) {
             Session sessao = FacesContextUtil.getRequestSession();
